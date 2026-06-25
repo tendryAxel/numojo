@@ -5,10 +5,10 @@ struct Array[T: Copyable]:
     var dimensions: List[Int]
 
     def __init__(out self, array: List[Self.T]):
-        self.content = len(array)
+        self.dimensions = [len(array)]
+        self.content = self.dimensions[0]
         self.data = array.copy()
         self.strides = [1]
-        self.dimensions = [self.content]
 
     def str(self) -> String:
         return "Array of length: {}".format(self.content)
